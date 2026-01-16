@@ -9,6 +9,11 @@
   "peerDependencies": {
     "typescript": "^5"
   },
+  "scripts": {
+    "build": "bun build src/index.ts --outdir ./dist --target=bun", 
+    "docker:start": " bunx --bun prisma migrate dev && bunx --bun prisma generate && bun dist/index.js", 
+    "dev": "bun src/index.ts"
+  },
   "dependencies": {
     "@prisma/adapter-pg": "^7.2.0",
     "@prisma/client": "^7.2.0",
