@@ -1,5 +1,5 @@
 import express, { type Request, type Response } from "express";
-import { prismaClient } from "./lib/client";
+import { prismaClient } from "../lib/client";
 
 const app = express();
 
@@ -22,4 +22,6 @@ app.post("/", async (req, res) => {
     })
 })
 
-app.listen(3000);
+app.listen(3000, () => {
+    console.log("Server is listening on the port: 3000")
+});
